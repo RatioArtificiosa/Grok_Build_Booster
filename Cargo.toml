@@ -1,0 +1,45 @@
+[package]
+name = "grok-build-booster"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Mission-control sidecar TUI for Grok Build — live timeline, telemetry, budgets, rewind assist, SuperGrok OAuth"
+readme = "README.md"
+repository = "https://github.com/RatioArtificiosa/Grok_Build_Booster"
+homepage = "https://github.com/RatioArtificiosa/Grok_Build_Booster"
+keywords = ["grok", "xai", "tui", "sidecar", "oauth", "coding-agent"]
+categories = ["command-line-utilities", "development-tools"]
+authors = ["RatioArtificiosa"]
+
+[[bin]]
+name = "grok-build-booster"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+axum = { version = "0.8", features = ["json"] }
+base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+clap = { version = "4", features = ["derive", "env"] }
+crossterm = { version = "0.28", features = ["event-stream"] }
+dirs = "6"
+git2 = "0.20"
+open = "5"
+rand = "0.8"
+ratatui = "0.29"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+tower-http = { version = "0.6", features = ["cors"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+url = "2"
+uuid = { version = "1", features = ["v4", "serde"] }
+
+[dev-dependencies]
+tempfile = "3"
+tokio-test = "0.4"
